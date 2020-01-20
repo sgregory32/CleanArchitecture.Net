@@ -1,0 +1,3 @@
+To create application database context file for project, run the following command in the Nuget package manager console:
+
+Scaffold-DbContext "Server=[Server Name];Database=[Database Name];Trusted_Connection=True;" -Provider Microsoft.EntityFrameworkCore.SqlServer -ContextDir Contexts -Context [Context Name: ex, AppDbContext] -OutputDir Models -Project [Project Name] -force

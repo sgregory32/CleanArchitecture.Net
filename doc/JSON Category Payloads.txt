@@ -1,0 +1,13 @@
+POST:
+
+{
+    "name": "Category Name"
+}
+
+PUT:
+
+{
+    "id": 1,
+    "name": "Category Name"
+}
+

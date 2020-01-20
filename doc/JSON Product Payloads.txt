@@ -1,0 +1,16 @@
+POST:
+
+{
+    "name": "Product Name",
+    "description": "Product Description",
+    "categoryId": 1
+}
+
+PUT:
+
+{
+    "id": 1,
+    "name": "Product Name",
+    "description": "Product Description",
+    "categoryId": 1
+}
