@@ -7,7 +7,7 @@ namespace CleanArchitecture.Api.Filters
 {
     /// <summary>
     /// Filter to catch, display, & log all unhandled Api exceptions. 
-    /// Returns Http 505: InternalServerError.
+    /// Returns Http 500: InternalServerError.
     /// </summary>
     public class ApiExceptionFilter : ExceptionFilterAttribute
     {
