@@ -8,7 +8,7 @@ Clean Architecture in this example is obtained through the implementation of the
 
 * Separation of Concerns/Single Responsibility: Api, Infrastructure (Data Access), Core (Domain models & generic, asynchronous repository interface)
 * Dependency Inversion Principle: All concrete class packages connect only through abstractions (interface or abstract class packages ) 
-* Explicit Dependencies Principle: All dependencies requested via constructor (except Serilog)  
+* Explicit Dependencies Principle: All dependencies requested via constructor  
 
 ### Project Structure  
 
