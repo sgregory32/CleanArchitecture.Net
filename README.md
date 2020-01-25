@@ -1,27 +1,27 @@
 ## .Net Core 3.0 C# Api example using Clean Architecture
 
-This solution consists of a .Net Core 3.0 C# Api developed using Clean Architecture principles. The solution contains the Api, Infrastructure, Core, and Test projects. The solution utilizes the EntityFramework ORM with a Repository pattern for data access which is accomplished by a single generic, asychronous repository interface. Logging is also implemented using Serilog.
+This solution consists of a simple .Net Core 3.0 C# API developed using Clean Architecture principles. The solution contains the API, Infrastructure, Core, and Test projects. The Infrastructure project utilizes the EntityFramework ORM with a Repository pattern for data access which is accomplished by a single, generic repository interface. Logging is implemented using Microsoft.Extensions.Logging interface with Serilog as the provider.
 
-Swagger has also been implemented but in order to view the endpoints, a database needs to be created & the connection strings in the api project/appsettings.json file will need to be modified to reflect your database implementation. The SQL scripts to create the database tables are included in the "docs" folder.  
+Swagger has also been implemented but in order to view the endpoints, a database needs to be created & connection strings in the API project/appsettings.json file will need to be modified to reflect your database implementation. The SQL scripts to create the database tables are included in the "docs" folder.  
 
-Clean Architecture in this example is obtained through the implementation of the following:  
+Clean Architecture in this example is obtained through architecture & the implementation of SOLID OOP principles including the following:  
 
-* Separation of Concerns/Single Responsibility: Api, Infrastructure (Data Access), Core (Domain models & generic, asynchronous repository interface)
-* Dependency Inversion Principle: All concrete class packages connect only through abstractions (interface or abstract class packages ) 
-* Explicit Dependencies Principle: All dependencies requested via constructor  
+* Separation of Concerns/Single Responsibility: API, Infrastructure (Data Access), Core (Domain models & generic repository interface)
+* Dependency Inversion Principle: All concrete class packages connect through abstractions (interfaces or abstract classes ) 
+* Explicit Dependencies Principle/Dependency Injection: All dependencies requested via constructor  
 
 ### Project Structure  
 
-* The Api project contains the REST endpoints, validation filters, log files, AutoMapper maps, DTO models, & configuration.  
-* The Infrastructure project contains the EntityFramework database context component & the generic, asynchronous EntityFramework repository implementation.  
-* The Core project contains the business domain entities, and generic, asynchronous repository inteface.  
+* The API project contains the REST endpoints, validation filters, logging &  files, AutoMapper maps, DTO models, & configuration.  
+* The Infrastructure project contains the EntityFramework database context component & generic repository implementation.  
+* The Core project contains the business domain entities, and generic repository inteface.  
 
 ![Clean Architecture Diagram](clean_architecture.png)  
 Clean Architecture Diagram
 
 From the diagram above, all projects depend on the core project; all dependencies point inward to this core. Inner projects define interfaces, outer projects implement the interfaces. None of the projects reference outward-positioned projects - inward references only.
 
-1.) The Api project has references to the Infrastructure and Core projects.  
+1.) The API project has references to the Infrastructure and Core projects.  
 2.) The Infrastructure project only references the Core project.  
 3.) The Core project has no other project references.  
 
@@ -65,7 +65,7 @@ To run all of the solution tests, click "Test" >>> "Run All Tests"
 There are two types of tests included in the solution. These tests use an in-memory database for tests. Here is the test breakdown:
 
 1.) Integration Tests: Tests the implementations of the asynchronous data repositories.  
-2.) Functional Tests: Test the Api REST controllers.  
+2.) Functional Tests: Tests the REST API controllers.  
 
 ## Built With
 
