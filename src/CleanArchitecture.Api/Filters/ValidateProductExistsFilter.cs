@@ -39,8 +39,9 @@ namespace CleanArchitecture.Api.Filters
                     {
                         if (_dbContext.Product.AsNoTracking().All(p => p.Id != id.Value))
                         {
-                            _logger.LogError("HTTP status code 404 occurred. Product.Product.Id: " + id.Value + " not found.");
-                            context.Result = new NotFoundObjectResult(id.Value);
+                            string errMsg = $"HTTP status code 404 occurred. ProductId: {id.Value} not found.";
+                            _logger.LogWarning(errMsg);
+                            context.Result = new NotFoundObjectResult(errMsg);
                             return;
                         }
                     }

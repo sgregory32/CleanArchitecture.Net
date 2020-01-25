@@ -39,8 +39,9 @@ namespace CleanArchitecture.Api.Filters
                     {
                         if (_dbContext.Category.AsNoTracking().All(c => c.Id != id.Value))
                         {
-                            _logger.LogError("HTTP status code 404 occurred. Category.Category.Id: " + id.Value + " not found.");
-                            context.Result = new NotFoundObjectResult(id.Value);
+                            string errMsg = $"HTTP status code 404 occurred. CategoryId: {id.Value} not found.";
+                            _logger.LogWarning(errMsg);
+                            context.Result = new NotFoundObjectResult(errMsg);
                             return;
                         }
                     }
