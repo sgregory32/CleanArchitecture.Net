@@ -10,7 +10,7 @@ namespace CleanArchitecture.Api.Controllers
     [Route("api/[controller]")]
     [ServiceFilter(typeof(ValidateModelFilter))]
     [ServiceFilter(typeof(ApiExceptionFilter))]
-    public abstract class BaseApiController : ControllerBase
+    public abstract class BaseController : ControllerBase
     {
     }
 }

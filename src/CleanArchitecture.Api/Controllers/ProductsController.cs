@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CleanArchitecture.Api.Controllers
 {
-    public class ProductsController : BaseApiController
+    public class ProductsController : BaseController
     {
         private readonly IAsyncRepository<Product> _repository;
         private readonly IMapper _mapper;
@@ -29,16 +29,11 @@ namespace CleanArchitecture.Api.Controllers
         }
 
         // GET: api/products/5
+        [ServiceFilter(typeof(ValidateProductExistsFilter))]
         [HttpGet("{id}")]
         public async Task<ActionResult<Product>> GetProduct(int id)
         {
             var product = await _repository.GetByIdAsync(e => e.Id == id, r => r.Category).ConfigureAwait(false);
-
-            if (product == null)
-            {
-                return NotFound();
-            }
-
             return Ok(_mapper.Map<Product, ProductDTO>(product));
         }
 
