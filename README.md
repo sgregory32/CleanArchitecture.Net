@@ -2,13 +2,15 @@
 
 This solution consists of a simple .Net Core 3.0 C# API developed using Clean Architecture principles. The solution contains the API, Infrastructure, Core, and Test projects. The Infrastructure project utilizes the EntityFramework ORM with a Repository pattern for data access which is accomplished by a single, generic repository interface. Logging is implemented using Microsoft.Extensions.Logging interface with Serilog as the provider.
 
-Swagger has also been implemented but in order to view the endpoints, a database needs to be created & connection strings in the API project/appsettings.json file will need to be modified to reflect your database implementation. The SQL scripts to create the database tables are included in the "docs" folder.  
+Swagger has also been implemented but in order to view the endpoints, a database needs to be created & connection strings in the API project/appsettings.json file will need to be modified to reflect your database environment. The SQL scripts to create the database tables are included in the "docs" folder.  
 
 Clean Architecture in this example is obtained through architecture & the implementation of SOLID OOP principles including the following:  
 
-* Separation of Concerns/Single Responsibility: API, Infrastructure (Data Access), Core (Domain models & generic repository interface)
-* Dependency Inversion Principle: All concrete class packages connect through abstractions (interfaces or abstract classes ) 
+* Separation of Concerns/Single Responsibility: API (REST endpoints), Infrastructure (Data Access), Core (Domain models & generic repository interface)
+* Dependency Inversion Principle: All concrete class packages are referenced through abstractions (interfaces or abstract classes ) 
 * Explicit Dependencies Principle/Dependency Injection: All dependencies requested via constructor  
+
+The end result is a loosely coupled solution that is easily extensible, & which each layer can be tested independenly.  
 
 ### Project Structure  
 
