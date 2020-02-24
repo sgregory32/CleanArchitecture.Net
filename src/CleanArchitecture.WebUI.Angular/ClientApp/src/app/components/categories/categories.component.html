@@ -1,0 +1,33 @@
+<h5>Categories</h5>
+<p *ngIf="!(categories$ | async)"><em>Loading categories...</em></p>
+
+<p style="font-size:smaller; font-style:italic;">
+  Categories which have associated products cannot be deleted. The category name can be edited but, products with this category have to be changed to a different category, or deleted before the category can be deleted.
+</p>
+
+<p>
+  <a [routerLink]="['/addcategory']" class="btn btn-primary btn-sm float-right">Add</a>
+</p>
+<p>&nbsp;</p>
+
+<table class="table table-sm table-hover" *ngIf="(categories$ | async)?.length>0">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th class="text-center">Associated Products?</th>
+      <th>&nbsp;</th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let category of (categories$ | async)">
+      <td>{{ category.id }}</td>
+      <td><a [routerLink]="['/categories/', category.id]">{{ category.name }}</a></td>
+      <td align="center"><input type="checkbox" name="hasProducts" [checked]="category.product.length === 0 ? false : true" onclick="return false;" onkeydown="return false;" /></td>
+      <td><a [routerLink]="['/categories/edit/', category.id]" class="btn btn-primary btn-sm float-right">Edit</a></td>
+      <td><button name="{{ category.id }}" (click)="delete(category.name, category.id, category.product.length === 0 ? false : true)" class="btn btn-danger btn-sm float-right">Delete</button></td>
+    </tr>
+  </tbody>
+</table>
+

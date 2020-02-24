@@ -1,0 +1,26 @@
+<ng-container *ngIf="(product$ | async) as product; else loading">
+   <h5>Product Detail</h5>
+  <p></p>
+  <ul>
+    <li>Product Id: {{ product.id }}</li>
+    <li>
+      Name: {{ product.name }}
+    </li>
+    <li>
+      Description: {{ product.description }}
+    </li>
+  </ul>
+  <table>
+    <tr> <td width="10%"> </td> <td> </td> </tr>
+    <tr>
+      <td> </td>
+      <td><p  style="font-weight:bold"> Category</p>
+        <ul>
+          <li>Category Id: {{ product.category.id }}</li>
+          <li>Name: {{ product.category.name }}</li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+</ng-container>
+<ng-template #loading>Loading product…</ng-template>

@@ -1,0 +1,31 @@
+<h5>Products</h5>
+<p *ngIf="!(products$ | async)"><em>Loading products...</em></p>
+
+<p>
+  <a [routerLink]="['/addproduct']" class="btn btn-primary btn-sm float-right">Add</a>
+</p>
+
+<p>&nbsp;</p>
+
+<table class="table table-sm table-hover" *ngIf="(products$ | async)?.length>0">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Category</th>
+      <th>&nbsp;</th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of (products$ | async)">
+      <td>{{ product.id }}</td>
+      <td><a [routerLink]="['/products/', product.id]">{{ product.name }}</a></td>
+      <td>{{ product.description }}</td>
+      <td>{{ product.category.name }}</td>
+      <td><a [routerLink]="['/products/edit/', product.id]" class="btn btn-primary btn-sm float-right">Edit</a></td>
+      <td><button name="{{ product.id }}" (click)="delete(product.name, product.id)" class="btn btn-danger btn-sm float-right">Delete</button></td>
+    </tr>
+  </tbody>
+</table>
