@@ -2,7 +2,7 @@
 
 #### Project Update  
 
-Added an Angular 8 Web UI project to demonstrate viewing & CRUD operations.  
+Added an Angular 8 Web UI project to access .Net API.  
 
 This solution consists of a simple .Net Core 3.0 C# API developed using Clean Architecture principles. The solution contains the API, Infrastructure, Core, and Test projects. The Infrastructure project utilizes the EntityFramework ORM with a Repository pattern for data access which is accomplished by a single, generic repository interface. Logging is implemented using Microsoft.Extensions.Logging interface with Serilog as the provider.
 
