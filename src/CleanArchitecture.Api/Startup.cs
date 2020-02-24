@@ -21,6 +21,14 @@ namespace CleanArchitecture.Api
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(
+                builder =>
+                {
+                    builder.WithOrigins("https://localhost:44337").AllowAnyHeader().AllowAnyMethod();
+                });
+            });
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("CleanArchitetureDbContext")));
             services.AddAutoMapper(typeof(Startup));
             services.AddSwaggerGen(c => c.SwaggerDoc("v1", new OpenApiInfo { Title = "CleanArchitecture V1", Version = "v1" }));
@@ -39,13 +47,14 @@ namespace CleanArchitecture.Api
 
             app.UseHsts();
             app.UseRouting();
+            app.UseCors();
             app.UseCookiePolicy();
             app.UseSwagger();
             app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "CleanArchitecture V1"));
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapDefaultControllerRoute();
+                endpoints.MapControllers();
             });
         }
     }
