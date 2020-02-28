@@ -26,7 +26,7 @@ namespace CleanArchitecture.Api
                 options.AddDefaultPolicy(
                 builder =>
                 {
-                    builder.WithOrigins("https://localhost:44337").AllowAnyHeader().AllowAnyMethod();
+                    builder.WithOrigins(Configuration["CorsDomains"]).AllowAnyHeader().AllowAnyMethod();
                 });
             });
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("CleanArchitetureDbContext")));
