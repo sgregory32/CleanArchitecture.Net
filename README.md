@@ -2,15 +2,17 @@
 
 #### Project Update  
 
-Added an Angular 8 Web UI project to access .Net API.  
+Added Angular 8 Web UI project to access .Net API.  
 
-This solution consists of a simple .Net Core 3.0 C# API developed using Clean Architecture principles. The solution contains the API, Infrastructure, Core, and Test projects. The Infrastructure project utilizes the EntityFramework ORM with a Repository pattern for data access which is accomplished by a single, generic repository interface. Logging is implemented using Microsoft.Extensions.Logging interface with Serilog as the provider.
+<img src="AngularJS_google.png" alt="Angular logo" width="160" height="89">  
+
+This solution consists of an Angular Web UI and a .Net Core 3.0 C# API including tests developed using Clean Architecture principles. The solution contains the WebUI, API, Infrastructure, Core, and Test projects. The Infrastructure project utilizes EntityFramework ORM with a Repository pattern for data access which is accomplished by a single, generic repository interface. Logging is implemented using Microsoft.Extensions.Logging interface with Serilog as the provider.
 
 Swagger has also been implemented but in order to view the endpoints, a database needs to be created & connection strings in the API project/appsettings.json file will need to be modified to reflect your database environment. The SQL scripts to create the database tables are included in the "docs" folder.  
 
-Clean Architecture in this example is obtained through architecture & the implementation of SOLID OOP principles including the following:  
+Clean Architecture in this example is obtained through architecture & the implementation of SOLID design principles including the following:  
 
-* Separation of Concerns/Single Responsibility: API (REST endpoints), Infrastructure (Data Access), Core (Domain models & generic repository interface)
+* Separation of Concerns/Single Responsibility: UI (web user interface), API (REST endpoints), Infrastructure (Data Access), Core (Domain models & generic repository interface)
 * Dependency Inversion Principle: All concrete class packages are referenced through abstractions (interfaces or abstract classes ) 
 * Explicit Dependencies Principle/Dependency Injection: All dependencies requested via constructor  
 
@@ -18,6 +20,7 @@ The end result is a loosely coupled solution that is easily extensible, & which 
 
 ### Project Structure  
 
+* The WebUI.Angular project contains the Angular web user interface.
 * The API project contains the REST endpoints, validation filters, logging &  files, AutoMapper maps, DTO models, & configuration.  
 * The Infrastructure project contains the EntityFramework database context component & generic repository implementation.  
 * The Core project contains the business domain entities, and generic repository inteface.  
@@ -25,14 +28,16 @@ The end result is a loosely coupled solution that is easily extensible, & which 
 ![Clean Architecture Diagram](clean_architecture.png)  
 Clean Architecture Diagram
 
-From the diagram above, all projects depend on the core project; all dependencies point inward to this core. Inner projects define interfaces, outer projects implement the interfaces. None of the projects reference outward-positioned projects - inward references only.
+From the diagram above, the api & infrastructure projects depend on the core project; all dependencies point inward to the core project. Inner projects define interfaces, outer projects implement the interfaces. None of the projects reference outward-positioned projects - inward references only. The Angular web project does not depend on other projects in this solution. It is a seperate project which hits the REST endpoints in the .Net Core Api project. The Api runs as a microservice. The WebUI.Angular project runs seperately from the Api.  
 
-1.) The API project has references to the Infrastructure and Core projects.  
-2.) The Infrastructure project only references the Core project.  
-3.) The Core project has no other project references.  
+1.) The WebUI.Angular project (not pictured above) calls the .Net Core Api project REST endpoints.   
+2.) The API project has references to the Infrastructure and Core projects.  
+3.) The Infrastructure project only references the Core project.  
+4.) The Core project has no other project references.  
 
 ### Prerequisites
 
+Angular (8) with Bootstrap 4.4.1  
 AutoMapper (9.0.0)  
 AutoMapper.Extensions.Microsoft.DependencyInjection (7.0.0)  
 Microsoft.AspNetCore.App (3.0.1)  
@@ -80,7 +85,7 @@ There are two types of tests included in the solution. These tests use an in-mem
 
 ## Disclaimer
 
-This solution is provided as a simple implementation of clean architecture using .Net. It is not meant to be used in any environment other than a development environment for learning purposes. By downloading, cloning, or any other means of implementing this solution, you agree to indemnify the author of all liability resulting from the use of this code.
+This solution is provided as a simple implementation of clean architecture using .Net & Angular. It is not meant to be used in any environment other than a development environment for learning purposes. By downloading, cloning, or any other means of implementing this solution, you agree to indemnify the author of all liability resulting from the use of this code.
 
 ## Author
 
