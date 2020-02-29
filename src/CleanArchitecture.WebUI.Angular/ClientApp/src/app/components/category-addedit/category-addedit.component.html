@@ -1,5 +1,4 @@
 <h5>{{actionType}} category</h5>
-<p *ngIf="!(categories$ | async)"><em>Loading categories...</em></p>
 <form [formGroup]="form" (ngSubmit)="save()" #formDir="ngForm" novalidate>
   <div class="form-group row">
     <label class=" control-label col-md-12">Name</label>

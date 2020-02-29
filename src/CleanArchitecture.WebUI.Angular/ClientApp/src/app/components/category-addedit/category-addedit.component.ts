@@ -51,26 +51,23 @@ export class CategoryAddEditComponent implements OnInit {
     }
 
     if (this.actionType === 'Add') {
-      let category: Category = {
+      const category: Category = {
         name: this.form.get(this.formName).value
-        //products: null
       };
 
       this.restService.saveCategory(category)
-        .subscribe((data) => {
+        .subscribe(() => {
           this.router.navigate(['/categories']);
         });
     }
 
     if (this.actionType === 'Edit') {
-      let category: Category = {
+      const category: Category = {
         id: this.existingCategory.id,
-        name: this.form.get(this.formName).value,
-        //products: null
-  
+        name: this.form.get(this.formName).value  
       };
       this.restService.updateCategory(category.id, category)
-        .subscribe((data) => {
+        .subscribe(() => {
           this.router.navigate(['/categories']);
         });
     }

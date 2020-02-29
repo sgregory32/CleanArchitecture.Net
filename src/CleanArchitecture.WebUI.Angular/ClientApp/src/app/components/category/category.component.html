@@ -13,10 +13,10 @@
       <td> </td>
       <td><p style="font-weight:bold"> Product Count: {{ category.product.length }}</p>
         <ul>
-          <ng-container *ngFor="let product of category.product; index as i;">
-            <li>Product Id: {{ category.product[i].id }}</li>
-            <li>Name: {{ category.product[i].name }}</li>
-            <li>Description: {{ category.product[i].description }}<p>&nbsp;</p></li>
+          <ng-container *ngFor="let product of category.product;">
+            <li>Product Id: {{ product.id }}</li>
+            <li>Name: {{ product.name }}</li>
+            <li>Description: {{ product.description }}<p>&nbsp;</p></li>
           </ng-container>
         </ul>
       </td>

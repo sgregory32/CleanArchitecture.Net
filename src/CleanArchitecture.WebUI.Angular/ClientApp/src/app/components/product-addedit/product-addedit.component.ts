@@ -66,7 +66,7 @@ export class ProductAddEditComponent implements OnInit {
     }
 
     if (this.actionType === 'Add') {
-      let product: Product = {
+      const product: Product = {
         name: this.form.get(this.formName).value,
         description: this.form.get(this.formDescription).value,
         categoryId: Number(this.form.get(this.formCategoryId).value),
@@ -74,13 +74,13 @@ export class ProductAddEditComponent implements OnInit {
       };
 
       this.restService.saveProduct(product)
-        .subscribe((data) => {
+        .subscribe(() => {
           this.router.navigate(['/products']);
         });
     }
 
     if (this.actionType === 'Edit') {
-      let product: Product = {
+      const product: Product = {
         id: this.existingProduct.id,
         name: this.form.get(this.formName).value,
         description: this.form.get(this.formDescription).value,
@@ -89,7 +89,7 @@ export class ProductAddEditComponent implements OnInit {
       };
 
       this.restService.updateProduct(product.id, product)
-        .subscribe((data) => {
+        .subscribe(() => {
           this.router.navigate(['/products']);
         });
     }

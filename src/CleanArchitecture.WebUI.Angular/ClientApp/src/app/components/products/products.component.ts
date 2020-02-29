@@ -26,11 +26,11 @@ export class ProductsComponent implements OnInit {
     this.categories$ = this.restService.getCategories();
   }
 
-  delete(name, productId) {
+  delete(name: string, productId: number) {
     const ans = confirm('Delete "' + name + '" product? (id: ' + productId + ')');
 
     if (ans) {
-      this.restService.deleteProduct(productId).subscribe((data) => {
+      this.restService.deleteProduct(productId).subscribe(() => {
         this.loadProducts();
       });
     }
