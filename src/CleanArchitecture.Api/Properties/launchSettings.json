@@ -3,7 +3,7 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:49398/",
+      "applicationUrl": "http://localhost:5002/",
       "sslPort": 0
     }
   },
@@ -13,7 +13,9 @@
       "launchBrowser": true,
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
-      }
+      },
+      "ancmHostingModel": "OutOfProcess",
+      "use64Bit": true
     },
     "CleanArchitecture.Api": {
       "commandName": "Project",
@@ -21,7 +23,7 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
-      "applicationUrl": "http://localhost:49399/"
+      "applicationUrl": "http://localhost:5002/"
     }
   }
 }

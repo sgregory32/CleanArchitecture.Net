@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Serilog;
 using System;
 using System.IO;
+using System.Reflection;
 
 namespace CleanArchitecture.Api
 {
@@ -13,6 +14,7 @@ namespace CleanArchitecture.Api
     {
         public static void Main(string[] args)
         {
+            Directory.SetCurrentDirectory(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
             var currentEnv = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
 
             var configuration = new ConfigurationBuilder()
@@ -52,6 +54,7 @@ namespace CleanArchitecture.Api
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+                .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
                 .UseSerilog()
                 .UseStartup<Startup>();
