@@ -30,7 +30,7 @@ Clean Architecture Diagram
 
 From the diagram above, the api & infrastructure projects depend on the core project; all dependencies point inward to the core project. Inner projects define interfaces, outer projects implement the interfaces. None of the projects reference outward-positioned projects - inward references only. The Angular web project does not depend on other projects in this solution. It is a seperate project which hits the REST endpoints in the .Net Core Api project. The Api runs as a microservice. The WebUI.Angular project runs seperately from the Api.  
 
-1.) The WebUI.Angular project (not pictured above) calls the .Net Core Api project REST endpoints.   
+1.) The WebUI.Angular project (not pictured above; would be outer-most layer) calls the .Net Core Api project REST endpoints.   
 2.) The API project has references to the Infrastructure and Core projects.  
 3.) The Infrastructure project only references the Core project.  
 4.) The Core project has no other project references.  
@@ -81,7 +81,11 @@ There are two types of tests included in the solution. These tests use an in-mem
 ## Built With
 
 * VisualStudio 2019
-* MSSQL Server 2017
+* MSSQL Server 2017  
+
+## Demo Link  
+
+https://cleanarchitecturewebapp.azurewebsites.net/
 
 ## Disclaimer
 

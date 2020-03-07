@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:49398/api/'
+  apiUrl: 'https://cleanarchitectureapi.azurewebsites.net/api/'
 };
 
 /*
