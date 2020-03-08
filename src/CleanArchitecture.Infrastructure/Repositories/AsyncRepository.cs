@@ -16,9 +16,7 @@ namespace CleanArchitecture.Infrastructure.Data
     {
         public AsyncRepository(AppDbContext dbContext)
         {
-            if (dbContext == null)
-                throw new ArgumentNullException("dbContext");
-            DbContext = dbContext;
+            DbContext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
             DbSet = DbContext.Set<T>();
         }
 

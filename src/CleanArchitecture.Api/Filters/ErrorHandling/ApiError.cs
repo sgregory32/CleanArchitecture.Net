@@ -1,8 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace CleanArchitecture.Api.Filters.ErrorHandling
+﻿namespace CleanArchitecture.Api.Filters.ErrorHandling
 {
     public class ApiError
     {
