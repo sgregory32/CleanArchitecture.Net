@@ -8,7 +8,7 @@ Added Angular 8 Web UI project to access .Net API.
 
 This solution consists of an Angular Web UI and a .Net Core 3.0 C# API including tests developed using Clean Architecture principles. The solution contains the WebUI, API, Infrastructure, Core, and Test projects. The Infrastructure project utilizes EntityFramework ORM with a Repository pattern for data access which is accomplished by a single, generic repository interface. Logging is implemented using Microsoft.Extensions.Logging interface with Serilog as the provider.
 
-Swagger has also been implemented but in order to view the endpoints, a database needs to be created & connection strings in the API project/appsettings.json file will need to be modified to reflect your database environment. The SQL scripts to create the database tables are included in the "docs" folder.  
+Swagger has also been implemented but in order to view the endpoints, a database needs to be created & connection strings in the API project/appsettings.json file will need to be modified to reflect your database environment. The SQL scripts to create the database tables are included in the *"docs"* folder.  
 
 Clean Architecture in this example is obtained through architecture & the implementation of SOLID design principles including the following:  
 
@@ -16,7 +16,7 @@ Clean Architecture in this example is obtained through architecture & the implem
 * Dependency Inversion Principle: All concrete class packages are referenced through abstractions (interfaces or abstract classes ) 
 * Explicit Dependencies Principle/Dependency Injection: All dependencies requested via constructor  
 
-The end result is a loosely coupled solution that is easily extensible, & which each layer can be tested independenly.  
+The end result is a loosely coupled solution that is easily extensible, & highly resilient which each layer can be tested independently.  
 
 ### Project Structure  
 
@@ -56,20 +56,40 @@ Microsoft.NET.Test.Sdk (16.2.0)
 xunit (2.4.0)  
 xunit.runner.visualstudio (2.4.0)
 
-### Installing
+### Installing & running API project locally  
 
 1.) Clone or download the project  
 2.) Open the solution in VisualStudio 2019  
-3.) [Optional] If you have access to an MSSQL server, create a database called "OptBot"  
-4.) [Optional] Run the commands in the CREATE Tables script.txt file in the "docs" folder  
-5.) [Optional] Modify the solution connection strings to reflect your MSSQL environment  
-6.) Build the solution  
-7.) Run the solution  
-8.) The Swagger implementation can be veiwed at: [host url]/swagger/  
+3.) Build the solution  
+4.) Run the CleanArchitecture.Api project  
+5.) The Swagger API implementation can be veiwed at: *[host url:port]/swagger/*  
+6.) The data produced from the API can be viewed at: *[host url:port]/api/categories* & *[host url:port]/api/products*
+
+### Running the Angular project locally   
+
+1.) After the API project is running locally, open the Visual Studio solution again in a new instance  
+2.) Right-click on the *CleanArchitecture.WebUI.Angular >>> Debug >>> Start new instance* to run the Angular project & copy the [host url:port] from the browser window
+3.) To enable CORS requests to the API project, copy the *[host url:port]* from the browser API into the CleanArchitecture.Api *appsettings.json* file, ex:  
+
+*"CorsDomains": "https://localhost:44337",*  
+
+Note: No trailing backslash!
+
+4.) In the CleanArchitecture.WebUI.Angular project edit the *src/app/environments/environment.ts* file and change the apiUrl to reflect the *[host url:port]/api/* from step 9 above , ex:   
+
+*export const environment = {
+  production: false,
+  apiUrl: 'http://localhost:5002/api/'
+};*  
+
+Note: Trailing backslash!  
+
+5.) Right-click on the *CleanArchitecture.WebUI.Angular >>> Debug >>> Start new instance* to run the Angular project
+6.) A browser window will open to the Angular UI
 
 ## Running the tests
 
-To run all of the solution tests, click "Test" >>> "Run All Tests"
+To run all of the solution tests, from the top-level menu items click *Test >>> Run All Tests*
 
 ### Test Composition
 

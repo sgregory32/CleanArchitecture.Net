@@ -1,5 +1,5 @@
-/****** Create a database named "OptBot" prior to running this script ******/
-USE [OptBot]
+/****** Create a database named "CleanArchitecture" prior to running this script ******/
+USE [CleanArchitecture]
 GO
 /****** Object:  Table [dbo].[Category]    Script Date: 1/8/2020 4:12:08 PM ******/
 SET ANSI_NULLS ON
