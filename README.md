@@ -68,7 +68,7 @@ xunit.runner.visualstudio (2.4.0)
 ### Running the Angular project locally   
 
 1.) After the API project is running locally, open the Visual Studio solution again in a new instance  
-2.) Right-click on the *CleanArchitecture.WebUI.Angular >>> Debug >>> Start new instance* to run the Angular project & copy the [host url:port] from the browser window
+2.) Right-click on the *CleanArchitecture.WebUI.Angular >>> Debug >>> Start new instance* to run the Angular project & copy the [host url:port] from the browser window  
 3.) To enable CORS requests to the API project, copy the *[host url:port]* from the browser API into the CleanArchitecture.Api *appsettings.json* file, ex:  
 
 *"CorsDomains": "https://localhost:44337",*  
@@ -84,8 +84,9 @@ Note: No trailing backslash!
 
 Note: Trailing backslash!  
 
-5.) Right-click on the *CleanArchitecture.WebUI.Angular >>> Debug >>> Start new instance* to run the Angular project
-6.) A browser window will open to the Angular UI
+5.) Save the changes, clean & build the solution  
+6.) Right-click on the *CleanArchitecture.WebUI.Angular >>> Debug >>> Start new instance* to run the Angular project  
+7.) A browser window will open to the Angular UI
 
 ## Running the tests
 
