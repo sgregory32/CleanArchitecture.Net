@@ -84,7 +84,7 @@ Note: No trailing backslash!
 
 Note: Trailing backslash!  
 
-5.) Save the changes, clean & build the solution  
+5.) Save the changes, clean & build the solution, restart the Api project  
 6.) Right-click on the *CleanArchitecture.WebUI.Angular >>> Debug >>> Start new instance* to run the Angular project  
 7.) A browser window will open to the Angular UI
 
