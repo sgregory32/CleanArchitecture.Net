@@ -15,7 +15,7 @@ namespace CleanArchitecture.Api
         public static void Main(string[] args)
         {
             Directory.SetCurrentDirectory(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
-            var currentEnv = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
+            //var currentEnv = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
 
             var configuration = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
@@ -30,7 +30,7 @@ namespace CleanArchitecture.Api
 
             try
             {
-                Log.Information("Starting web host. Environment: " + currentEnv);
+                Log.Warning("\n\n****  Starting CleanArchitecture.Api Service.  ****\n");
 
                 var host = CreateWebHostBuilder(args).Build();
 
