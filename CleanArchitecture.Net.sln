@@ -29,6 +29,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchitecture.Api", "sr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchitecture.WebUI.Angular", "src\CleanArchitecture.WebUI.Angular\CleanArchitecture.WebUI.Angular.csproj", "{0C2870BE-9A48-4F3F-8BB0-360D3CEFB5F5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchitecture.UnitTests", "tests\CleanArchitecture.UnitTests\CleanArchitecture.UnitTests.csproj", "{F4CFDD17-5E28-40B5-847F-FEA5EF4C48C0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +61,10 @@ Global
 		{0C2870BE-9A48-4F3F-8BB0-360D3CEFB5F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0C2870BE-9A48-4F3F-8BB0-360D3CEFB5F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0C2870BE-9A48-4F3F-8BB0-360D3CEFB5F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4CFDD17-5E28-40B5-847F-FEA5EF4C48C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4CFDD17-5E28-40B5-847F-FEA5EF4C48C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4CFDD17-5E28-40B5-847F-FEA5EF4C48C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4CFDD17-5E28-40B5-847F-FEA5EF4C48C0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -70,6 +76,7 @@ Global
 		{37392946-71FD-4BEC-9B21-A69E0CBEFD11} = {8FB46949-52AE-4E69-BCF7-6622E3885974}
 		{E1384403-4C7D-434D-A8D8-E879CFA55546} = {8FB46949-52AE-4E69-BCF7-6622E3885974}
 		{0C2870BE-9A48-4F3F-8BB0-360D3CEFB5F5} = {8FB46949-52AE-4E69-BCF7-6622E3885974}
+		{F4CFDD17-5E28-40B5-847F-FEA5EF4C48C0} = {A6ECBE89-C901-45CE-AB80-91CA5D027748}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A217A356-D4FD-4B2B-98F9-14E59B5F7EFD}
