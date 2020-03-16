@@ -1,5 +1,8 @@
 ﻿using CleanArchitecture.Core.Entities;
 using CleanArchitecture.Infrastructure.Data;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Linq;
 
 namespace CleanArchitecture.FunctionalTests
@@ -11,13 +14,11 @@ namespace CleanArchitecture.FunctionalTests
             Id = 1,
             Name = "Category 1"
         };
-
         public static readonly Category category2 = new Category
         {
             Id = 2,
             Name = "Category 2"
         };
-
         public static readonly Category category3 = new Category
         {
             Id = 3,
@@ -31,7 +32,6 @@ namespace CleanArchitecture.FunctionalTests
             Description = "Product 1 description",
             CategoryId = 1
         };
-
         public static readonly Product product2 = new Product
         {
             Id = 2,
@@ -39,7 +39,6 @@ namespace CleanArchitecture.FunctionalTests
             Description = "Product 2 description",
             CategoryId = 2
         };
-
         public static readonly Product product3 = new Product
         {
             Id = 3,

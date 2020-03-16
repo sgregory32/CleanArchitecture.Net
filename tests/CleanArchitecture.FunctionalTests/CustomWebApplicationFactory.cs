@@ -1,4 +1,5 @@
-﻿using CleanArchitecture.Infrastructure.Data;
+﻿using CleanArchitecture.Api;
+using CleanArchitecture.Infrastructure.Data;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.EntityFrameworkCore;
@@ -7,7 +8,7 @@ using System;
 
 namespace CleanArchitecture.FunctionalTests
 {
-    public class AppDbContext<TStartup> : WebApplicationFactory<Api.TStartup>
+    public class CustomWebApplicationFactory<TStartup> : WebApplicationFactory<Startup>
     {
         protected override void ConfigureWebHost(IWebHostBuilder builder)
         {

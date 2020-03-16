@@ -24,7 +24,6 @@
     <ProjectReference Include="..\..\src\CleanArchitecture.Infrastructure\CleanArchitecture.Infrastructure.csproj" />
     <ProjectReference Include="..\..\src\CleanArchitecture.Api\CleanArchitecture.Api.csproj" />
     <ProjectReference Include="..\..\src\CleanArchitecture.Infrastructure\CleanArchitecture.Infrastructure.csproj" />
-    <ProjectReference Include="..\CleanArchitecture.IntegrationTests\CleanArchitecture.IntegrationTests.csproj" />
   </ItemGroup>
 
 </Project>

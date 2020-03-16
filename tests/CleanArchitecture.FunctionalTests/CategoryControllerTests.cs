@@ -10,12 +10,12 @@ using Xunit;
 
 namespace CleanArchitecture.FunctionalTests
 {
-    public class CategoryControllerTests : IClassFixture<AppDbContext<TStartup>>
+    public class CategoryControllerTests : IClassFixture<CustomWebApplicationFactory<Startup>>
     {
         private readonly HttpClient _client;
         private readonly string apiUrl = "/api/categories/";
 
-        public CategoryControllerTests(AppDbContext<TStartup> factory)
+        public CategoryControllerTests(CustomWebApplicationFactory<Startup> factory)
         {
             _client = factory.CreateClient();
             _client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
