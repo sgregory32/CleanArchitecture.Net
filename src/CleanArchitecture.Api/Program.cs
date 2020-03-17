@@ -14,8 +14,7 @@ namespace CleanArchitecture.Api
     {
         public static void Main(string[] args)
         {
-            Directory.SetCurrentDirectory(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
-            //var currentEnv = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
+            //Directory.SetCurrentDirectory(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));  //Commented out for local logging; DO NOT CHECK IN OR PUBLISH
 
             var configuration = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
@@ -26,11 +25,13 @@ namespace CleanArchitecture.Api
 
             Log.Logger = new LoggerConfiguration()
                 .ReadFrom.Configuration(configuration)
+                .WriteTo.Console()                                //Added for local logging; DO NOT CHECK IN OR PUBLISH
                 .CreateLogger();
 
             try
             {
-                Log.Warning("\n\n****  Starting CleanArchitecture.Api Service.  ****\n");
+                //Log.Warning("\n\n****  Starting CleanArchitecture.Api Service.  ****\n");  //Commented out for local logging; DO NOT CHECK IN OR PUBLISH
+                Log.Warning("\n\n****  Starting CleanArchitecture.Api Application Service. Environment: " + Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") + "  ****\n");
 
                 var host = CreateWebHostBuilder(args).Build();
 
