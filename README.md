@@ -104,10 +104,6 @@ There are two types of tests included in the solution. These tests use an in-mem
 * VisualStudio 2019
 * MSSQL Server 2017  
 
-## Demo Link  
-
-https://cleanarchitecturewebapp.azurewebsites.net/
-
 ## Disclaimer
 
 This solution is provided as a simple implementation of clean architecture using .Net & Angular. It is not meant to be used in any environment other than a development environment for learning purposes. By downloading, cloning, or any other means of implementing this solution, you agree to indemnify the author of all liability resulting from the use of this code.
