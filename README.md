@@ -110,4 +110,4 @@ This solution is provided as a simple implementation of clean architecture using
 
 ## Author
 
-* **Skip Gregory** - https://github.com/sgregory32
+* **George Gregory** - https://github.com/sgregory32
